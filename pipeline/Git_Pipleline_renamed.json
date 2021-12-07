@@ -1,6 +1,17 @@
 {
 	"name": "Git_Pipleline_renamed",
 	"properties": {
+		"activities": [
+			{
+				"name": "Wait1",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 7
+				}
+			}
+		],
 		"annotations": []
 	}
 }
