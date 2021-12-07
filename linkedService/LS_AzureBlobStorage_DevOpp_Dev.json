@@ -1,0 +1,17 @@
+{
+	"name": "LS_AzureBlobStorage_DevOpp_Dev",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_AzureKeyVault_Dev128",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "DevSec"
+			}
+		}
+	}
+}
