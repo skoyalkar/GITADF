@@ -1,0 +1,42 @@
+{
+	"name": "source_dataset_customer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase4__pr_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "age",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Address_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Sales_id",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "customer"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

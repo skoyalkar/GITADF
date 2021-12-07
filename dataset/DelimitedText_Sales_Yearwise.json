@@ -1,0 +1,26 @@
+{
+	"name": "DelimitedText_Sales_Yearwise",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Sales_Year_Wise",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat('Sales_in_',item().Year,'.csv')",
+					"type": "Expression"
+				},
+				"container": "container1129"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

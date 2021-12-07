@@ -1,0 +1,42 @@
+{
+	"name": "Delete_csv",
+	"properties": {
+		"activities": [
+			{
+				"name": "Delete_csv_files",
+				"type": "Delete",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "delete",
+						"type": "DatasetReference"
+					},
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage_delete_ls",
+							"type": "LinkedServiceReference"
+						},
+						"path": "container1129"
+					},
+					"enableLogging": true,
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"fileListPath": "container1129/JoinData.csv",
+						"enablePartitionDiscovery": false
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-11-29T14:31:11Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

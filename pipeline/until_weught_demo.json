@@ -1,0 +1,34 @@
+{
+	"name": "until_weught_demo",
+	"properties": {
+		"activities": [
+			{
+				"name": "Until_wait",
+				"type": "Until",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@greater(utcnow(),' 12/1/21, 2:02:12 PM ')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Wait_to_Excecute",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 15
+							}
+						}
+					],
+					"timeout": "7.00:00:00"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-12-01T08:29:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

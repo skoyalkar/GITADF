@@ -1,0 +1,17 @@
+{
+	"name": "AzureSqlTable1_lookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "country_lkp",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "customer1"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

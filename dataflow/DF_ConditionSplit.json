@@ -1,0 +1,46 @@
+{
+	"name": "DF_ConditionSplit",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_DF_Input",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_ADL_Output",
+						"type": "DatasetReference"
+					},
+					"name": "USAUK"
+				},
+				{
+					"dataset": {
+						"referenceName": "DS_ADL_Output",
+						"type": "DatasetReference"
+					},
+					"name": "USAIND"
+				},
+				{
+					"dataset": {
+						"referenceName": "DS_ADL_Output",
+						"type": "DatasetReference"
+					},
+					"name": "default"
+				}
+			],
+			"transformations": [
+				{
+					"name": "ConditionalSplit1"
+				}
+			],
+			"script": "source(output(\n\t\tColumn_1 as string,\n\t\tColumn_2 as string,\n\t\tColumn_3 as string,\n\t\tColumn_4 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 split(Column_2=='USA'||Column_2=='UK',\n\tColumn_2=='USA'||Column_2=='IND',\n\tdisjoint: true) ~> ConditionalSplit1@(USAUK, USAIND, Default)\nConditionalSplit1@USAUK sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['USA_UK_Data.csv'],\n\tumask: 0777,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tpartitionBy('hash', 1)) ~> USAUK\nConditionalSplit1@USAIND sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['USA_IND_Sales.csv'],\n\tumask: 0777,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tpartitionBy('hash', 1)) ~> USAIND\nConditionalSplit1@Default sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['Aust_Other_Country.csv'],\n\tumask: 0777,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tpartitionBy('hash', 1)) ~> default"
+		}
+	}
+}

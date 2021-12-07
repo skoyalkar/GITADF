@@ -1,0 +1,17 @@
+{
+	"name": "Target_userData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_target_incr",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "userData"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
