@@ -1,0 +1,270 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf1129"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureSqlDatabase_sales_lk_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase_sales_lk'"
+		},
+		"AzureSqlDatabase3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase3'"
+		},
+		"AzureBlobStorage3_json_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3_json'"
+		},
+		"AzureSqlDatabase4__pr_ls_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase4__pr_ls'"
+		},
+		"Target_datala_LS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Target_datala_LS'"
+		},
+		"double_target_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'double_target_LS'"
+		},
+		"AzureBlobStorage_delete_ls_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage_delete_ls'"
+		},
+		"AzureBlobStorage3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
+		},
+		"country_lkp_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'country_lkp'"
+		},
+		"AzureSqlDatabase_foreach_ls_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase_foreach_ls'"
+		},
+		"AzureSqlDatabase4_lo_for_w_copy_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase4_lo_for_w_copy'"
+		},
+		"AzureBlobStorage_foreach_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage_foreach'"
+		},
+		"Sales_Yearwise_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Sales_Yearwise'"
+		},
+		"Sales_Year_Wise_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Sales_Year_Wise'"
+		},
+		"AzureBlobStorage4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage4'"
+		},
+		"LS_source_Incr_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_source_Incr'"
+		},
+		"LS_target_incr_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_target_incr'"
+		},
+		"LS_DATALAKE_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_DATALAKE_OUTPUT'"
+		},
+		"Target_datala_LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://azuredatalake1129.dfs.core.windows.net/"
+		},
+		"LS_DATALAKE_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://azuredatalake1129.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf1129_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureSqlDatabase2_connectionString": {
+						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
+					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"AzureSqlDatabase_sales_lk_connectionString": {
+						"value": "[parameters('AzureSqlDatabase_sales_lk_connectionString')]"
+					},
+					"AzureSqlDatabase3_connectionString": {
+						"value": "[parameters('AzureSqlDatabase3_connectionString')]"
+					},
+					"AzureBlobStorage3_json_connectionString": {
+						"value": "[parameters('AzureBlobStorage3_json_connectionString')]"
+					},
+					"AzureSqlDatabase4__pr_ls_connectionString": {
+						"value": "[parameters('AzureSqlDatabase4__pr_ls_connectionString')]"
+					},
+					"Target_datala_LS_accountKey": {
+						"value": "[parameters('Target_datala_LS_accountKey')]"
+					},
+					"double_target_LS_connectionString": {
+						"value": "[parameters('double_target_LS_connectionString')]"
+					},
+					"AzureBlobStorage_delete_ls_connectionString": {
+						"value": "[parameters('AzureBlobStorage_delete_ls_connectionString')]"
+					},
+					"AzureBlobStorage3_connectionString": {
+						"value": "[parameters('AzureBlobStorage3_connectionString')]"
+					},
+					"country_lkp_connectionString": {
+						"value": "[parameters('country_lkp_connectionString')]"
+					},
+					"AzureSqlDatabase_foreach_ls_connectionString": {
+						"value": "[parameters('AzureSqlDatabase_foreach_ls_connectionString')]"
+					},
+					"AzureSqlDatabase4_lo_for_w_copy_connectionString": {
+						"value": "[parameters('AzureSqlDatabase4_lo_for_w_copy_connectionString')]"
+					},
+					"AzureBlobStorage_foreach_connectionString": {
+						"value": "[parameters('AzureBlobStorage_foreach_connectionString')]"
+					},
+					"Sales_Yearwise_connectionString": {
+						"value": "[parameters('Sales_Yearwise_connectionString')]"
+					},
+					"Sales_Year_Wise_connectionString": {
+						"value": "[parameters('Sales_Year_Wise_connectionString')]"
+					},
+					"AzureBlobStorage4_connectionString": {
+						"value": "[parameters('AzureBlobStorage4_connectionString')]"
+					},
+					"LS_source_Incr_connectionString": {
+						"value": "[parameters('LS_source_Incr_connectionString')]"
+					},
+					"Target_datala_LS_properties_typeProperties_url": {
+						"value": "[parameters('Target_datala_LS_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adf1129_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_target_incr_connectionString": {
+						"value": "[parameters('LS_target_incr_connectionString')]"
+					},
+					"LS_DATALAKE_OUTPUT_accountKey": {
+						"value": "[parameters('LS_DATALAKE_OUTPUT_accountKey')]"
+					},
+					"LS_DATALAKE_OUTPUT_properties_typeProperties_url": {
+						"value": "[parameters('LS_DATALAKE_OUTPUT_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf1129_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "adf1129_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf1129_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "adf1129_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf1129_ArmTemplate_2')]"
+			]
+		}
+	]
+}

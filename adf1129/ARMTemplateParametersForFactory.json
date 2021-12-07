@@ -1,0 +1,81 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf1129"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase_sales_lk_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_json_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase4__pr_ls_connectionString": {
+			"value": ""
+		},
+		"Target_datala_LS_accountKey": {
+			"value": ""
+		},
+		"double_target_LS_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage_delete_ls_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
+		"country_lkp_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase_foreach_ls_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase4_lo_for_w_copy_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage_foreach_connectionString": {
+			"value": ""
+		},
+		"Sales_Yearwise_connectionString": {
+			"value": ""
+		},
+		"Sales_Year_Wise_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage4_connectionString": {
+			"value": ""
+		},
+		"LS_source_Incr_connectionString": {
+			"value": ""
+		},
+		"LS_target_incr_connectionString": {
+			"value": ""
+		},
+		"LS_DATALAKE_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"Target_datala_LS_properties_typeProperties_url": {
+			"value": "https://azuredatalake1129.dfs.core.windows.net/"
+		},
+		"LS_DATALAKE_OUTPUT_properties_typeProperties_url": {
+			"value": "https://azuredatalake1129.dfs.core.windows.net"
+		}
+	}
+}
