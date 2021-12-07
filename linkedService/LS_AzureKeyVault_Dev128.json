@@ -1,0 +1,10 @@
+{
+	"name": "LS_AzureKeyVault_Dev128",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kvndev.vault.azure.net/"
+		}
+	}
+}
